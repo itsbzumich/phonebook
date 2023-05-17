@@ -5,6 +5,8 @@ var morgan = require('morgan')
 const cors = require('cors')
 
 app.use(cors())
+app.use(express.static('build'))
+
 
 morgan.token('body', (request) =>
   request.method === 'POST' ? JSON.stringify(request.body) : null
